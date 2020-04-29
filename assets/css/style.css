@@ -1,0 +1,138 @@
+*{
+    padding:0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+}
+main p, table ,li{
+    font-size: .8em;
+}
+.grid-item{
+    border-top: 1px solid #e4e3e1;
+    display: flex;
+}
+.conteudo{
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    flex: 1 1 auto;
+}
+
+.conteudo:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(1px 1px 1px #000);
+}
+.prt:hover{
+    transform: none;
+    border: none;
+    filter: none;
+}
+
+
+#nome{
+    font-size: 3em;
+}
+h1{
+    font-size: 1.2em;
+}
+.areas li{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.formacao div{
+    margin-top: 10px;
+}
+.formacao div span{
+    font-weight: bold;
+}
+table, td{
+    border-bottom: 1px solid ;
+    border-collapse: collapse;
+}
+table{
+    margin-top: 20px;
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+}
+th{
+    background-color: grey;
+    border-radius: 0px 50px 10px 0;
+    color: #fff;
+}
+td{
+    height: 20px;
+}
+h3{
+    font-size: 0.9em;
+}
+.contatos{
+    margin-top: 40px;
+    color: tomato;
+    font-size: 0.9em;
+}
+.contatos i{
+    font-size: 1.5em;
+    margin-right:5px ;
+}
+a i{
+    color: tomato;
+    transition: all 0.3s ease-in-out;
+}
+a{
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+a i:hover{
+    color: black;
+}
+a:hover{
+    color: tomato;
+}
+
+
+@media only screen and (min-width: 768px) {
+    body{
+        width: 900px;
+        margin: auto;
+    }
+
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 45% 27.5% 27.5%;
+        height: 600px;
+    }
+
+    main > .grid-item:not(:nth-child(4n+1)) .conteudo{
+        border-left: 1px solid #e4e3e1;
+        transition: all 0.3s ease-in-out;
+        
+    }
+    main > .grid-item:not(:nth-child(4n+1)) .conteudo:hover{
+        border-width: 5px;
+    }
+    
+    .conteudo:hover{
+        transform: scale(1.50);
+        border: 5px solid #e4e3e1;
+    }
+    .prt:hover{
+        transform: none;
+        border: none;
+    }
+}   
