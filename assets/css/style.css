@@ -36,20 +36,44 @@ main p, table ,li{
 .conteudo:hover{
     transform: scale(1.05);
     filter: drop-shadow(1px 1px 1px #000);
+    overflow-y: auto;
 }
-.prt:hover{
+.prt:hover, .bkg:hover{
     transform: none;
     border: none;
     filter: none;
 }
-
-
+/*Gri1*/
 #nome{
     font-size: 3em;
 }
 h1{
     font-size: 1.2em;
 }
+.contatos{
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+a i{
+    color: tomato;
+    transition: all 0.3s ease-in-out;
+}
+a{
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+a i:hover{
+    color: black;
+}
+a:hover{
+    color: tomato;
+}
+
+.contatos i{
+    font-size: 1.5em;
+    margin-right:5px ;
+}
+/*Gri2*/
 .areas li{
     font-size: 1.1em;
     font-weight: bold;
@@ -60,6 +84,34 @@ h1{
 .formacao div span{
     font-weight: bold;
 }
+
+/*Gri3*/
+.legenda{
+    margin-top: 60px;
+}
+.pontos{
+    margin-top:20px
+}
+.legenda li, .pontos li{
+    margin-top: 5px;
+}
+.legenda li::before, .pontos li::before{
+    content: '';
+    background: tomato;
+    width: 4px;
+    height: 10px;
+    float: left;
+    margin-right: 5px;
+}
+.legenda li:nth-child(2)::before{
+    background: greenyellow;
+
+}
+.legenda li:nth-child(3)::before{
+    background: turquoise;
+
+}
+/*Gri4*/
 table, td{
     border-bottom: 1px solid ;
     border-collapse: collapse;
@@ -81,44 +133,39 @@ td{
 h3{
     font-size: 0.9em;
 }
-.contatos{
-    margin-top: 40px;
-    color: tomato;
-    font-size: 0.9em;
-}
-.contatos i{
-    font-size: 1.5em;
-    margin-right:5px ;
-}
-a i{
-    color: tomato;
-    transition: all 0.3s ease-in-out;
-}
-a{
-    color: black;
-    transition: all 0.3s ease-in-out;
-}
-a i:hover{
-    color: black;
-}
-a:hover{
-    color: tomato;
+/*Detalhes*/
+
+.grid-item:nth-child(n+5) h3::before {
+    content: '';
+    background: tomato;
+    width: 5px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    transform: translateX(-20px);
 }
 
+.grid-item:nth-child(9) h3::before {
+    background: greenyellow;
+}
+.grid-item:nth-child(10) h3::before {
+    background: turquoise;
+}
 
 @media only screen and (min-width: 768px) {
     body{
         width: 900px;
         margin: auto;
     }
-
     main{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 45% 27.5% 27.5%;
         height: 600px;
     }
-
-    main > .grid-item:not(:nth-child(4n+1)) .conteudo{
+    .principal, .principal2{
+        grid-row: 2/4 
+    }
+    main > .grid-item:not(:nth-child(4n+1)) .conteudo, .grid-item:nth-child(9) .conteudo {
         border-left: 1px solid #e4e3e1;
         transition: all 0.3s ease-in-out;
         
@@ -126,13 +173,25 @@ a:hover{
     main > .grid-item:not(:nth-child(4n+1)) .conteudo:hover{
         border-width: 5px;
     }
-    
     .conteudo:hover{
         transform: scale(1.50);
-        border: 5px solid #e4e3e1;
+        border: 4px solid #e4e3e1;
+        z-index: 1;
     }
-    .prt:hover{
+    .grid-item:nth-child(n+5) .conteudo:hover{
+        border: 4px solid tomato;
+    }
+    .grid-item:nth-child(9) .conteudo:hover{
+        border: 4px solid greenyellow;
+    }
+    .grid-item:nth-child(10) .conteudo:hover{
+        border: 4px solid turquoise;
+    }
+    .prt:hover, .bkg:hover{
         transform: none;
         border: none;
     }
-}   
+    .grid-item:nth-child(n+5) h3::before {
+        transform: translateX(190px);
+    }
+} 
