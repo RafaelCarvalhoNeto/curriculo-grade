@@ -34,8 +34,6 @@ main p, table ,li{
 }
 
 .conteudo:hover{
-    transform: scale(1.05);
-    filter: drop-shadow(1px 1px 1px #000);
     overflow-y: auto;
 }
 .prt:hover, .bkg:hover{
@@ -139,7 +137,7 @@ h3{
     content: '';
     background: tomato;
     width: 5px;
-    height: 20px;
+    height: 50px;
     display: block;
     position: absolute;
     transform: translateX(-20px);
@@ -168,15 +166,13 @@ h3{
     main > .grid-item:not(:nth-child(4n+1)) .conteudo, .grid-item:nth-child(9) .conteudo {
         border-left: 1px solid #e4e3e1;
         transition: all 0.3s ease-in-out;
-        
-    }
-    main > .grid-item:not(:nth-child(4n+1)) .conteudo:hover{
-        border-width: 5px;
     }
     .conteudo:hover{
         transform: scale(1.50);
-        border: 4px solid #e4e3e1;
         z-index: 1;
+    }
+    .grid-item:nth-child(n+3) .conteudo:hover{
+        border: 4px solid #e4e3e1;
     }
     .grid-item:nth-child(n+5) .conteudo:hover{
         border: 4px solid tomato;
@@ -193,5 +189,6 @@ h3{
     }
     .grid-item:nth-child(n+5) h3::before {
         transform: translateX(190px);
+        height: 20px;
     }
 } 
