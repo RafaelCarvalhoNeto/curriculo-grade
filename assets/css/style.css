@@ -16,6 +16,13 @@ main{
     display: grid;
     grid-template-columns: 1fr;
     height: 100%;
+    visibility: hidden;
+    transition: visibility 0.7s linear, opacity 0.5s linear;
+    opacity: 0;
+}
+.active {
+    visibility: visible;
+    opacity: 1;
 }
 main p, table ,li{
     font-size: .8em;
